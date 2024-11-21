@@ -67,3 +67,11 @@ In total, the maximum number of earth blocks that can be removed, while keeping 
 How many earth blocks can be safely removed at most from your map while maintaining the proper slope?
 
 Solution: **133**
+
+### Part 2
+
+Finishing the first task quickly allows you to move to the next part of this challenge. This time, **the map is much bigger and more complex**. The task is the same, but the larger size requires more accuracy. Will your intelligent thinking and developed instincts be enough again?
+
+How many earth blocks can be safely removed at most from your new map while maintaining the proper slope?
+
+Solution: **2749**
