@@ -11,3 +11,4 @@ Each quest has three parts parts to it. I've broken the solutions for each part 
   * [Quest 01 - The Battle for the Farmlands](./quest_01/README.md).
     * [Reddit discussion page](https://www.reddit.com/r/everybodycodes/comments/1gjro4x/2024_q1_solution_spotlight/)
   * [Quest 02 - The Runes of Power](./quest_02/README.md).
+    * [Reddit discussion page](https://www.reddit.com/r/everybodycodes/comments/1gkkae5/2024_q2_solution_spotlight/)
