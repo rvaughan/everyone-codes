@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-This code holds the solution for part 2 of quest 3 of the Everone Codes tournament 2024.
+This code holds the solution for part 3 of quest 3 of the Everone Codes tournament 2024.
 """
 import sys
 
@@ -93,7 +93,7 @@ test_list = """
 ...####...
 ..........
 """
-result = run_test(test_list, 35)
+result = run_test(test_list, 29)
 
 print('')
 print('-----------------')
@@ -104,7 +104,7 @@ print('')
 # Ok, so if we reach here, then we can be reasonably sure that the code
 # above is working correctly. Let's use the actual captcha now.
 
-with open('input_p2.txt', 'r') as f:
+with open('input_p3.txt', 'r') as f:
     input_data = [line.strip() for line in f]
     answer = calculate_solution(input_data)
 
