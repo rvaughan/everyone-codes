@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-This code holds the solution for part 1 of quest 2 of the Everone Codes tournament 2024.
+This code holds the solution for part 2 of quest 2 of the Everone Codes tournament 2024.
 """
 import sys
 
@@ -14,8 +14,34 @@ def calculate_solution(lines):
             if words is None:
                 words = line.split(':')[1].split(',')
             else:
+                positions = set()
+
                 for word in words:
-                    result += line.count(word)
+                    offset = 0
+                    while offset < len(line):
+                        pos = line.find(word, offset)
+                        if pos == -1:
+                            break
+
+                        for x in range(pos, pos+len(word)):
+                            positions.add(x)
+
+                        offset = pos + 1
+
+                    # Now check the same word in reverse...
+                    offset = 0
+                    word = word[::-1]
+                    while offset < len(line):
+                        pos = line.find(word, offset)
+                        if pos == -1:
+                            break
+                        
+                        for x in range(pos, pos+len(word)):
+                            positions.add(x)
+
+                        offset = pos + 1
+
+                result += len(positions)
 
     return result
 
@@ -38,34 +64,16 @@ def run_test(test_input, expected_solution):
 
 # Run any tests that we've defined to help validate our code prior to
 # trying to solve the puzzle.
-
 test_list = """
-WORDS:THE,OWE,MES,ROD,HER
+WORDS:THE,OWE,MES,ROD,HER,QAQ
 
-AWAKEN THE POWER ADORNED WITH THE FLAMES BRIGHT IRE
-"""
-result = run_test(test_list, 4)
-
-test_list = """
-WORDS:THE,OWE,MES,ROD,HER
-
+AWAKEN THE POWE ADORNED WITH THE FLAMES BRIGHT IRE
 THE FLAME SHIELDED THE HEART OF THE KINGS
-"""
-result = run_test(test_list, 3)
-
-test_list = """
-WORDS:THE,OWE,MES,ROD,HER
-
 POWE PO WER P OWE R
-"""
-result = run_test(test_list, 2)
-
-test_list = """
-WORDS:THE,OWE,MES,ROD,HER
-
 THERE IS THE END
+QAQAQ
 """
-result = run_test(test_list, 3)
+result = run_test(test_list, 42)
 
 print('')
 print('-----------------')
@@ -76,7 +84,7 @@ print('')
 # Ok, so if we reach here, then we can be reasonably sure that the code
 # above is working correctly. Let's use the actual captcha now.
 
-with open('input_p1.txt', 'r') as f:
+with open('input_p2.txt', 'r') as f:
     input_data = [line.strip() for line in f]
     answer = calculate_solution(input_data)
 
