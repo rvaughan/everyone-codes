@@ -65,3 +65,5 @@ In the third layer, only **one block** of earth can be safely removed.
 In total, the maximum number of earth blocks that can be removed, while keeping the slope at a safe degree, is **35**.
 
 How many earth blocks can be safely removed at most from your map while maintaining the proper slope?
+
+Solution: **133**
