@@ -9,11 +9,12 @@ def calculate_solution(lines):
     result = 0
 
     grid = []
-    for line in lines:
-        if line.strip() == '':
-            continue
+    grid.append([0] * (len(lines[0]) + 2))
 
-        grid.append(list([0 if item == '.' else 1 for item in line]))
+    for line in lines:
+        grid.append([0] + list([0 if item == '.' else 1 for item in line]) + [0])
+
+    grid.append([0] * (len(lines[0]) + 2))
 
     changes = True
     while changes:
@@ -30,28 +31,52 @@ def calculate_solution(lines):
                 if cell == 0:
                     continue
 
+                # Cell above
                 if y > 0 and grid[y - 1][x] == 0:
                     continue
-
                 if grid[y - 1][x] <= (grid[y][x] - 1) or grid[y - 1][x] >= (grid[y][x] + 1):
                     continue
 
+                # Cell below
                 if y < len(grid) and grid[y + 1][x] == 0:
                     continue
-
                 if grid[y + 1][x] <= (grid[y][x] - 1) or grid[y + 1][x] >= (grid[y][x] + 1):
                     continue
 
+                # Cell to the left
                 if x > 0 and grid[y][x - 1] == 0:
                     continue
-
                 if grid[y][x - 1] <= (grid[y][x] - 1) or grid[y][x + 1] >= (grid[y][x] + 1):
                     continue
 
+                # Cell to the right
                 if y < len(grid) and grid[y][x + 1] == 0:
                     continue
-
                 if grid[y][x + 1] <= (grid[y][x] - 1) or grid[y][x + 1] >= (grid[y][x] + 1):
+                    continue
+
+                # Cell to the top left
+                if grid[y - 1][x - 1] == 0:
+                    continue
+                if grid[y - 1][x - 1] <= (grid[y][x] - 1) or grid[y - 1][x - 1] >= (grid[y][x] + 1):
+                    continue
+
+                # Cell to the top right
+                if grid[y - 1][x + 1] == 0:
+                    continue
+                if grid[y - 1][x + 1] <= (grid[y][x] - 1) or grid[y - 1][x + 1] >= (grid[y][x] + 1):
+                    continue
+
+                # Cell to the bottom left
+                if grid[y + 1][x - 1] == 0:
+                    continue
+                if grid[y + 1][x - 1] <= (grid[y][x] - 1) or grid[y + 1][x - 1] >= (grid[y][x] + 1):
+                    continue
+
+                # Cell to the bottom right
+                if grid[y + 1][x + 1] == 0:
+                    continue
+                if grid[y + 1][x + 1] <= (grid[y][x] - 1) or grid[y + 1][x + 1] >= (grid[y][x] + 1):
                     continue
 
                 new_grid[y][x] += 1
@@ -59,6 +84,9 @@ def calculate_solution(lines):
                 changes = True
 
         grid = new_grid
+
+    # for row in grid:
+    #     print("".join([str(item) for item in row]))
 
     result = sum([sum(row) for row in grid])
 
@@ -84,15 +112,13 @@ def run_test(test_input, expected_solution):
 # Run any tests that we've defined to help validate our code prior to
 # trying to solve the puzzle.
 
-test_list = """
-..........
+test_list = """..........
 ..###.##..
 ...####...
 ..######..
 ..######..
 ...####...
-..........
-"""
+.........."""
 result = run_test(test_list, 29)
 
 print('')

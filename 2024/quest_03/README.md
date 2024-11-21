@@ -78,7 +78,7 @@ Solution: **2749**
 
 ### Part 3
 
-The final map of the challenge concerns the royal lands! The rules largely remain the same, but the map includes several separate areas. To improve the comfort of the ponds created at the end of this process, the king requires that the rule about the gradual drop in slope also applies to blocks that are diagonally adjacent. You also need to treat the noted map as it's surrounded by  `.`  area infinitely in all directions.
+The final map of the challenge concerns the royal lands! The rules largely remain the same, but the map includes several separate areas. To improve the comfort of the ponds created at the end of this process, the king requires that **the rule about the gradual drop in slope also applies to blocks that are diagonally adjacent**. You also need to treat the noted map as it's surrounded by  `.`  area infinitely in all directions.
 
 **Example based on the following notes:**
 
@@ -119,3 +119,5 @@ In the second layer, we can remove only **4 blocks** of earth to fulfill the new
 In total, the maximum number of earth blocks that can be removed, while keeping the slope at the correct angle is **29 blocks**.
 
 How many earth blocks can be safely removed at most from your final map while maintaining the proper slope?
+
+Solution: 10040
