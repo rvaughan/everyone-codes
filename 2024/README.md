@@ -15,3 +15,4 @@ Each quest has three parts parts to it. I've broken the solutions for each part 
   * [Quest 03 - Mining Maestro](./quest_03/README.md).
     * [Reddit discussion page](https://www.reddit.com/r/everybodycodes/comments/1gld7e3/2024_q3_solution_spotlight/)
   * [Quest 04 - Royal Smith's Puzzle](./quest_04/README.md).
+    * [Reddit discussion page](https://www.reddit.com/r/everybodycodes/comments/1gm4sic/2024_q4_solution_spotlight/)
