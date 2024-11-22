@@ -64,3 +64,5 @@ Confident in your understanding of the rules, you carefully jot down the intrica
 Given the tree's impressive size, **describe the final path using only the first letters of each branch**. For example a path with branches: `RR,ABAB,CDCD,EFEF,ROLO,@` becomes a `RACER@`.
 
 **What is the path to the most powerful fruit on your tree?**
+
+Solution: **RXWSTWDGGZ@**

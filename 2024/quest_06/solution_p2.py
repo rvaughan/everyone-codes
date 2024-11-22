@@ -23,11 +23,16 @@ def calculate_solution(lines):
         if key == "@":
             paths[len(path)].append(path)
 
+        if key not in data:
+            continue
+
         children = data[key]
         for c in children:
             q.append(path + [c])
     
-    return "".join(next(filter(lambda p: len(p) == 1, paths.values())).pop())
+    branches = next(filter(lambda p: len(p) == 1, paths.values())).pop()
+
+    return ''.join([branch[0] for branch in branches])
 
 
 def run_test(test_input, expected_solution):
@@ -58,7 +63,7 @@ E:@
 F:@
 G:@
 H:@"""
-result = run_test(test_list, 'RRB@')
+result = run_test(test_list, 'RB@')
 
 print('')
 print('-----------------')
