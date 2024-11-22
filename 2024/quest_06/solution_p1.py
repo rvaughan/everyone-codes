@@ -2,13 +2,32 @@
 """
 This code holds the solution for part 1 of quest 6 of the Everone Codes tournament 2024.
 """
+from collections import defaultdict, deque
 import sys
 
 
-def calculate_solution(items):
-    result = 0
+def to_dict(lines):
+    return {
+        line[0]: line[1].split(",")
+        for line in [line.strip().split(":") for line in lines]
+    }
 
-    return result
+
+def calculate_solution(lines):
+    data = to_dict(lines)
+
+    q, paths = deque([["RR"]]), defaultdict(list)
+    while q:
+        path = q.popleft()
+        key = path[-1]
+        if key == "@":
+            paths[len(path)].append(path)
+
+        children = data[key]
+        for c in children:
+            q.append(path + [c])
+    
+    return "".join(next(filter(lambda p: len(p) == 1, paths.values())).pop())
 
 
 def run_test(test_input, expected_solution):
@@ -30,9 +49,16 @@ def run_test(test_input, expected_solution):
 # Run any tests that we've defined to help validate our code prior to
 # trying to solve the puzzle.
 
-test_list = """
-"""
-result = run_test(test_list, 7)
+test_list = """RR:A,B,C
+A:D,E
+B:F,@
+C:G,H
+D:@
+E:@
+F:@
+G:@
+H:@"""
+result = run_test(test_list, 'RRB@')
 
 print('')
 print('-----------------')

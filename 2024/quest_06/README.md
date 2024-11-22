@@ -52,3 +52,5 @@ H
 All the fruits, except for one, are located on branches with the same path length relative to the root. The path to this singular, most powerful fruit is: ***RRB@***.
 
 ***What is the path to the most powerful fruit on your tree?***
+
+Solution: **RRZQRQCZJDSV@**
