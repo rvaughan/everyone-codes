@@ -28,3 +28,5 @@ It takes **1 strike** to drive the 4-unit nail to 3 units; **4 strikes** to brin
 In total, you need **10 strikes** of the hammer.
 
 **What is the minimum number of hammer strikes needed to level all the nails?**
+
+Solution: **74**

@@ -5,8 +5,15 @@ This code holds the solution for part 1 of quest 4 of the Everone Codes tourname
 import sys
 
 
-def calculate_solution(items):
+def calculate_solution(nails_list):
     result = 0
+
+    nails = [int(n) for n in nails_list]
+
+    min_height = min(nails)
+
+    for nail in nails:
+        result += nail - min_height
 
     return result
 
