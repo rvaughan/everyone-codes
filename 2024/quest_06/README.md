@@ -74,3 +74,5 @@ The final challenge takes place at the most ancient tree in the orchard, a magni
 As in Part II, the root is marked with `RR`, and you should describe the final path using only the first letters of each branch.
 
 **What is the path to the most powerful fruit on the tree?**
+
+Solution: **RFXHWRHJNHZX@**
