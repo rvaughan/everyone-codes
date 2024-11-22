@@ -229,3 +229,5 @@ Round  Number
 10:    2323
 
 **What is the number shouted at the end of the 10th round?**
+
+Solution: **3252**
