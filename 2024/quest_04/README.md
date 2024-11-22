@@ -60,3 +60,5 @@ The lengths of the nails are 2, 4, 5, 6, and 8 units. Assuming you want to level
 In total, this requires **8 hammer strikes**, which is the **minimal number** for this nail set.
 
 **What is the minimum number of hammer strikes needed to level all the nails?**
+
+Solution: **124206299**

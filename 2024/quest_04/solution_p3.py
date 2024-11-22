@@ -6,16 +6,33 @@ import sys
 
 
 def calculate_solution(nails_list):
-    result = 0
-
     nails = [int(n) for n in nails_list]
+    
+    # This time, sort the list, and then work our way through the list, when the
+    # number of strikes goes up then we know the previous attempt was the correct 
+    # answer.
 
-    min_height = min(nails)
+    nails.sort()
 
-    for nail in nails:
-        result += nail - min_height
+    starting_point = 0
+    best_strikes = 999999999
 
-    return result
+    while True:
+        min_height = nails[starting_point]
+
+        num_strikes = 0
+        for nail in nails:
+            num_strikes += abs(min_height - nail)
+
+        print(starting_point, min_height, num_strikes)
+
+        if num_strikes > best_strikes:
+            break
+
+        best_strikes = num_strikes
+        starting_point += 1
+
+    return best_strikes
 
 
 def run_test(test_input, expected_solution):
@@ -37,11 +54,12 @@ def run_test(test_input, expected_solution):
 # Run any tests that we've defined to help validate our code prior to
 # trying to solve the puzzle.
 
-test_list = """3
+test_list = """2
 4
-7
+5
+6
 8"""
-result = run_test(test_list, 10)
+result = run_test(test_list, 8)
 
 print('')
 print('-----------------')
