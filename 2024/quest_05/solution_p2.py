@@ -2,11 +2,13 @@
 """
 This code holds the solution for part 2 of quest 5 of the Everone Codes tournament 2024.
 """
+from collections import defaultdict
 import sys
 
 
 def calculate_solution(input):
     result = 0
+    shouted = defaultdict(int)
 
     num_rows = len(input[0].split(' '))
 
@@ -18,7 +20,7 @@ def calculate_solution(input):
 
     cur_row = 0
     clap_round = 1
-    while clap_round < 11:
+    while True:
         clapper = lines[cur_row].pop(0)
         
         next_row = cur_row + 1 if cur_row < num_rows - 1 else 0
@@ -38,12 +40,16 @@ def calculate_solution(input):
 
         # print(clap_round, "".join([str(x[0]) for x in lines]))
 
+        result = int("".join([str(x[0]) for x in lines]))
+
+        shouted[result] += 1
+        if shouted[result] == 2024:
+            break
+        
         clap_round += 1
         cur_row = next_row
 
-    result = int("".join([str(x[0]) for x in lines]))
-
-    return result
+    return result * clap_round
 
 
 def run_test(test_input, expected_solution):

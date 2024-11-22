@@ -274,3 +274,5 @@ After 10 rounds, some numbers were shouted twice already: 6285, 5284, 6584, and 
 Multiplying 6285 by 8095 gives the final answer: **50877075**.
 
 **What do you get if you multiply the first number shouted for the 2024th time by the total number of dance rounds?**
+
+Solution: *10474791974460*
