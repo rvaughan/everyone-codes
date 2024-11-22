@@ -19,3 +19,5 @@ Each quest has three parts parts to it. I've broken the solutions for each part 
   * [Quest 05 - Pseudo-Random Clap Dance](./quest_05/README.md).
     * [Reddit discussion page](https://www.reddit.com/r/everybodycodes/comments/1gmwffb/2024_q5_solution_spotlight/)
   * [Quest 05 - The Tree of Titans](./quest_06/README.md).
+    * [Watch](https://www.youtube.com/watch?v=UxwXRKFDNM8) Jonathan Paulson solve it.
+    * [Reddit discussion page](https://www.reddit.com/r/everybodycodes/comments/1gp5zc5/2024_q6_solution_spotlight/)
