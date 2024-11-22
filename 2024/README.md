@@ -14,3 +14,4 @@ Each quest has three parts parts to it. I've broken the solutions for each part 
     * [Reddit discussion page](https://www.reddit.com/r/everybodycodes/comments/1gkkae5/2024_q2_solution_spotlight/)
   * [Quest 03 - Mining Maestro](./quest_03/README.md).
     * [Reddit discussion page](https://www.reddit.com/r/everybodycodes/comments/1gld7e3/2024_q3_solution_spotlight/)
+  * [Quest 04 - ???](./quest_04/README.md).
