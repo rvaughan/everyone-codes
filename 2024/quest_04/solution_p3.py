@@ -52,7 +52,7 @@ print('')
 # Ok, so if we reach here, then we can be reasonably sure that the code
 # above is working correctly. Let's use the actual captcha now.
 
-with open('input_p2.txt', 'r') as f:
+with open('input_p3.txt', 'r') as f:
     input_data = [line.strip() for line in f]
     answer = calculate_solution(input_data)
 
