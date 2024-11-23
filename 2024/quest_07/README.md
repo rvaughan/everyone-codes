@@ -63,3 +63,93 @@ The final ranking of the action plans after 10 segments is as follows: **BDCA**.
 **What is the ranking of the squires' action plans after 10 segments?**
 
 Solution: **EHBKGDAJF**
+
+### Part 2
+
+It's time for the knights' races!
+
+Unlike the squires, they race on specially designed tracks that **also affect the devices' behaviour**, often disrupting planned actions. The track is organized as a closed loop of segments, allowing knights to complete multiple laps. Knights **start from segment S** and proceed in a clockwise direction (to the right when viewed from above).
+
+
+The terrain of the track is marked as follows:
+
+- `=`  does not alter the execution of the plan
+- `+`  forces the device to **increase the power by one**, ignoring the current action
+- `-`  forces the device to **decrease the power by one**, ignoring the current action
+- `S`  start and finish segment, does not alter the execution of the plan
+
+The first action is executed (and the first essence is gathered) at the first segment after S. The last action and last essence gathering for the loop occur at the S segment. In other words, S is the segment from which everyone starts, but it is also the last segment of the track's loop.
+
+The race is set for 10 loops.
+
+Example based on the following notes:
+
+```
+A:+,-,=,=
+B:+,=,-,+
+C:=,-,+,+
+D:=,=,=,+
+```
+
+For the sample plans above and the track as below:
+
+```
+S+===
+-   +
+=+=-+
+```
+
+the actual actions for the first loop (taking into account the race track) will be as follows:
+
+```
+      1   2   3   4   5   6   7   8   9  10  11  12
+track +   =   =   =   +   +   -   =   +   =   -   S
+A     +   -   =   =   +   +   -   =   +   -   -   =
+B     +   =   -   +   +   +   -   +   +   =   -   +
+C     +   -   +   +   +   +   -   +   +   -   -   +
+D     +   =   =   +   +   +   -   +   +   =   -   +
+```
+
+Device power for each segment:
+
+```
+      1   2   3   4   5   6   7   8   9  10  11  12
+A    11  10  10  10  11  12  11  11  12  11  10  10
+B    11  11  10  11  12  13  12  13  14  14  13  14
+C    11  10  11  12  13  14  13  14  15  14  13  14
+D    11  11  11  12  13  14  13  14  15  15  14  15
+```
+
+Total essence gathered:
+
+- A  11 + 10 + 10 + 10 + 11 + 12 + 11 + 11 + 12 + 11 + 10 + 10 = **129**
+- B  11 + 11 + 10 + 11 + 12 + 13 + 12 + 13 + 14 + 14 + 13 + 14 = **148**
+- C  11 + 10 + 11 + 12 + 13 + 14 + 13 + 14 + 15 + 14 + 13 + 14 = **154**
+- D  11 + 11 + 11 + 12 + 13 + 14 + 13 + 14 + 15 + 15 + 14 + 15 = **158**
+
+The ranking of the action plans after one loop is: **DCBA**.
+
+The final ranking of the action plans after 10 loops is also **DCBA**, with a total essence gathered:
+
+```
+A : 1290
+B : 3640
+C : 3700
+D : 4280
+```
+
+The racetrack for the first round is shown below:
+
+```
+S-=++=-==++=++=-=+=-=+=+=--=-=++=-==++=-+=-=+=-=+=+=++=-+==++=++=-=-=--
+-                                                                     -
+=                                                                     =
++                                                                     +
+=                                                                     +
++                                                                     =
+=                                                                     =
+-                                                                     -
+--==++++==+=+++-=+=-=+=-+-=+-=+-=+=-=+=--=+++=++=+++==++==--=+=++==+++-
+```
+
+**What is the final ranking of action plans after 10 loops?**
