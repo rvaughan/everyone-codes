@@ -153,3 +153,5 @@ S-=++=-==++=++=-=+=-=+=+=--=-=++=-==++=-+=-=+=-=+=+=++=-+==++=++=-=-=--
 ```
 
 **What is the final ranking of action plans after 10 loops?**
+
+Solution: **EGDBFAIKJ**
