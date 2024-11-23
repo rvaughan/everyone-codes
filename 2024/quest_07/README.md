@@ -188,3 +188,5 @@ S+= +=-== +=++=     =+=+=--=    =-= ++=     +=-  =+=++=-+==+ =++=-=-=--
 ```
 
 **How many different winning action plans can you prepare?**
+
+Solution: **6373**

@@ -2,73 +2,118 @@
 """
 This code holds the solution for part 3 of quest 7 of the Everone Codes tournament 2024.
 """
+import itertools
 import sys
 
 
-def calculate_solution(items, track_plan):
-    plans = {}
+# Keep a cache of actions and scores, so we don't have to keep calculating things
+# over and over. Performance.
+DP = {}
 
-    track_pieces = track_plan.split('\n')
 
-    track = track_pieces[0]
+def map_track(grid):
+    row, col, direction = 0, 0, 1
 
-    left_side = ''
-    right_side = ''
+    # N E S W
+    D = [(0,-1), (1,0), (0,1), (-1,0)]
 
-    for piece in track_pieces[1:-1]:
-        left_side += piece[0]
-        right_side += piece[-1]
+    track_str = ''
 
-    track += right_side + track_pieces[-1][::-1] + left_side[::-1]
+    while True:
+        # Check to see if we've finished one circuit of the map...
+        if len(track_str) > 0 and grid[row][col] == 'S':
+            break
 
-    track = track[1:] + 'S'
+        # Decide where to look next for the continuation of the track, will be
+        # one of:
+        #   1. in the same direction
+        #   2. to our left (relative to the current direction)
+        #   3. to our right (relative to the current direction)
+        for new_direction in [direction, (direction+3) % 4, (direction+1) % 4]:
+            rr = row + D[new_direction][1]
+            cc = col + D[new_direction][0]
 
-    for plan in items:
-        name, steps = plan.split(':')
-        steps = steps.split(',')
+            # Check that we are still within bounds, and we've not found an empty cell.
+            if 0 <= rr < len(grid) and 0 <= cc < len(grid[rr]) and grid[rr][cc] != ' ':
+                track_str += grid[rr][cc]
+                row, col = rr, cc
+                direction = new_direction
+                break
 
-        plans[name] = 10
+    return track_str
 
-        scores = []
 
-        loop = 0
-        knight_segment = 0
-        while loop < 10:
-            for track_segment in range(0, len(track)):                        
-                if track[track_segment] == '+':
-                    plans[name] += 1
-                elif track[track_segment] == '-':
-                    plans[name] -= 1 if plans[name] > 0 else 0
-                elif track[track_segment] == '=' or track[track_segment] == 'S':
-                    # Just do whatever the knight wants to
-                    if steps[knight_segment % len(steps)] == '+':
-                        plans[name] += 1
-                    elif steps[knight_segment % len(steps)] == '-':
-                        plans[name] -= 1 if plans[name] > 0 else 0
-                    elif steps[knight_segment % len(steps)] == '=':
-                        plans[name] += 0
+def score_lap(actions, track_str):
+    key = tuple(actions)
 
-                # print(track[track_segment], knight_segment, knight_segment % len(steps), steps[knight_segment % len(steps)], plans[name])
+    if key in DP:
+        return DP[key]
+    
+    power = 0
+    score = 0
+    i = 0
+    
+    for cell in track_str:
+        if cell == '=' or cell == 'S':
+            cell = actions[i % len(actions)]
 
-                knight_segment += 1
+        if cell == '+':
+            power += 1
+        elif cell == '-':
+            power -= 1
+        else:
+            assert cell == '=' or cell == 'S', cell
+        
+        score += power
+        i += 1
+    
+    DP[key] = (score, power)
+    
+    return (score, power)
 
-                scores.append(plans[name])
 
-            # print(name, scores, sum(scores))
+def score_knight(actions, track, laps):
+    score = 0
+    power = 10
+    i = 0
 
-            loop += 1
+    for round_ in range(laps):
+        round_actions = actions[i:] + actions[:i]
 
-        plans[name] = sum(scores)
+        #print(f'{i=} {round_actions=} {actions=}')
+        
+        round_score, round_power = score_lap(round_actions, track)
+        score += round_score + power * len(track)
+        power += round_power
+        i = (i + len(track)) % len(actions)
 
-    sorted_plans = dict(sorted(plans.items(), key=lambda item: item[1]))
+    return score
 
-    # print(sorted_plans)
 
-    result = ''
-    for key, _ in sorted_plans.items():
-        result += key
+def calculate_solution(lines, track_plan):
+    track = map_track(track_plan)
 
-    result = result[::-1]
+    actions_by_id = {}
+    for line in lines:
+        id_, actions = line.split(':')
+        actions = actions.split(',')
+        actions_by_id[id_] = actions
+
+    ROUNDS = 2024
+    enemy_score = score_knight(actions_by_id['A'], track, ROUNDS)
+
+    result = 0
+    opts = set(itertools.permutations('+++++---==='))
+    # print(len(opts))
+    
+    for i, opt in enumerate(opts):
+        opt_score = score_knight(opt, track, ROUNDS)
+
+        # if i % 100 == 0:
+        #     print(i, opt_score, enemy_score)
+
+        if opt_score > enemy_score:
+            result += 1
 
     return result
 
@@ -91,18 +136,10 @@ def run_test(test_input, test_track, expected_solution):
 # Ok, so if we reach here, then we can be reasonably sure that the code
 # above is working correctly. Let's use the actual captcha now.
 
-track="""S+= +=-== +=++=     =+=+=--=    =-= ++=     +=-  =+=++=-+==+ =++=-=-=--
-- + +   + =   =     =      =   == = - -     - =  =         =-=        -
-= + + +-- =-= ==-==-= --++ +  == == = +     - =  =    ==++=    =++=-=++
-+ + + =     +         =  + + == == ++ =     = =  ==   =   = =++=
-= = + + +== +==     =++ == =+=  =  +  +==-=++ =   =++ --= + =
-+ ==- = + =   = =+= =   =       ++--          +     =   = = =--= ==++==
-=     ==- ==+-- = = = ++= +=--      ==+ ==--= +--+=-= ==- ==   =+=    =
--               = = = =   +  +  ==+ = = +   =        ++    =          -
--               = + + =   +  -  = + = = +   =        +     =          -
---==++++==+=+++-= =-= =-+-=  =+-= =-= =--   +=++=+++==     -=+=++==+++-"""
+with open('track_p3.txt', 'r') as f:
+    track = [line.strip() for line in f]
 
-with open('input_p2.txt', 'r') as f:
+with open('input_p3.txt', 'r') as f:
     input_data = [line.strip() for line in f]
     answer = calculate_solution(input_data, track)
 
