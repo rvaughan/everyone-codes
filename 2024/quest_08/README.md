@@ -131,3 +131,5 @@ The final structure's width is 9 blocks, so the answer is 3 * 9 = **27**.
 Determine the final width of the shrine and the number of additional blocks needed to complete the last layer.
 
 **What do you get if you multiply these two numbers?**
+
+Solution: **142665228**
