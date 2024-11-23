@@ -238,3 +238,5 @@ layers  blocks
 ```
 
 **How many platinum blocks at minimum should the king provide to ensure that the shrine design can be completed?**
+
+Solution: **41082**
