@@ -155,3 +155,36 @@ S-=++=-==++=++=-=+=-=+=+=--=-=++=-==++=-+=-=+=-=+=+=++=-+==++=++=-=-=--
 **What is the final ranking of action plans after 10 loops?**
 
 Solution: **EGDBFAIKJ**
+
+### Part 3
+
+You have advanced to the final duel! The general rules remain unchanged, but the racetrack is much more complex. Each knight must **make their action plan**, making sure it is precisely **11 actions long**, consisting of:
+
+- 5 actions of  `+` 
+- 3 actions of  `-` 
+- and the remaining 3 as `=`
+
+For example, a valid action plan could be `+-=+-=+-=++`
+
+Your rival knight declares their strategy first, allowing you to quickly make a note of it.
+
+**The duel is set for 2024 loops.**
+
+Victory is almost guaranteed, but just in case, you decide to compare a few plans… and to ensure that you are more than prepared **you consider all possible plans!**
+
+The racetrack for the final duel is shown below:
+
+```
+S+= +=-== +=++=     =+=+=--=    =-= ++=     +=-  =+=++=-+==+ =++=-=-=--
+- + +   + =   =     =      =   == = - -     - =  =         =-=        -
+= + + +-- =-= ==-==-= --++ +  == == = +     - =  =    ==++=    =++=-=++
++ + + =     +         =  + + == == ++ =     = =  ==   =   = =++=
+= = + + +== +==     =++ == =+=  =  +  +==-=++ =   =++ --= + =
++ ==- = + =   = =+= =   =       ++--          +     =   = = =--= ==++==
+=     ==- ==+-- = = = ++= +=--      ==+ ==--= +--+=-= ==- ==   =+=    =
+-               = = = =   +  +  ==+ = = +   =        ++    =          -
+-               = + + =   +  -  = + = = +   =        +     =          -
+--==++++==+=+++-= =-= =-+-=  =+-= =-= =--   +=++=+++==     -=+=++==+++-
+```
+
+**How many different winning action plans can you prepare?**
