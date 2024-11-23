@@ -5,8 +5,22 @@ This code holds the solution for part 1 of quest 8 of the Everone Codes tourname
 import sys
 
 
-def calculate_solution(items):
+def calculate_solution(num_blocks):
     result = 0
+
+    num_blocks = int(num_blocks[0])
+
+    cur_width = 1
+    num_blocks -= cur_width
+    while num_blocks > 0:
+        cur_width += 2
+
+        if cur_width > num_blocks:
+            missing = cur_width - num_blocks
+            result = missing * cur_width
+            break            
+        else:
+            num_blocks -= cur_width
 
     return result
 
@@ -30,9 +44,8 @@ def run_test(test_input, expected_solution):
 # Run any tests that we've defined to help validate our code prior to
 # trying to solve the puzzle.
 
-test_list = """
-"""
-result = run_test(test_list, 7)
+test_list = """13"""
+result = run_test(test_list, 21)
 
 print('')
 print('-----------------')

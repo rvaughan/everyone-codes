@@ -63,3 +63,5 @@ Your final answer is a product of multiplying the number of missing blocks by th
 Determine the final width of the shrine and the number of additional blocks needed to complete the final layer.
 
 **What is the result of multiplying the number of missing blocks by the target width?**
+
+Solution: **10025324**
