@@ -23,3 +23,4 @@ Each quest has three parts parts to it. I've broken the solutions for each part 
     * [Reddit discussion page](https://www.reddit.com/r/everybodycodes/comments/1gp5zc5/2024_q6_solution_spotlight/)
   * [Quest 07 - Not Fast but Furious](./quest_07/README.md).
     * [Reddit discussion page](https://www.reddit.com/r/everybodycodes/comments/1gpylzn/2024_q7_solution_spotlight/)
+  * [Quest 08 - ???](./quest_08/README.md).
