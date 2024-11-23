@@ -133,3 +133,108 @@ Determine the final width of the shrine and the number of additional blocks need
 **What do you get if you multiply these two numbers?**
 
 Solution: **142665228**
+
+### Part 3
+
+Everyone agrees that the final shape is almost perfect! It's just a matter of adjusting the parameters slightly and ensuring there are empty spaces for the worshippers to place their offerings. After a brief debate, the finally chosen idea is as follows:
+
+Layers are planned in almost the same way as before, but with different parameters.
+Start with a layer thickness of 1, and calculate the thickness of the subsequent layers as follows:
+
+- Multiply the thickness of the previous layer by the current number of **high priests of Nullpointer**: `(your notes)`.
+- Take the remainder of dividing the result by the number of current **high priest acolytes**: `10`.
+- Add the number of current **high priest acolytes**: `10` to the result to ensure the minimal thickness of the layers.
+- You have the thickness of the subsequent layer ready to use.
+
+After designing the shrine as before, layer by layer, it is time to calculate how many bottom blocks in each column should be left as empty space, according to the following rules:
+
+**The blocks forming the upper frame of the shrine cannot be removed to prevent the structure from collapsing.**
+Adjacent blocks are connected on the side planes, not diagonally. An example shrine and the blocks forming the upper frame of the shrine are shown below:
+```
+     #                   #
+    ###                 ###
+    ###                 # #
+    ###                 # #
+   #####               ## ##
+   #####       >       #   #
+   #####               #   #
+   #####               #   #
+  #######             ##   ##
+  #######             #     #
+ #########           ##     ##
+```
+To calculate the **number of blocks that should be left as empty space in a specific column**:
+
+- Multiply the number of **high priests**: `(your notes)` by the current width of the shrine base.
+- Multiply the result by the height of this column.
+- Take the remainder of dividing the result by the number of current **high priest acolytes**: `10`.
+- Now you know how many bottom blocks should be left as empty for given column.
+
+**If you repeat that process for all columns, you can finally calculate how many block are needed for building the shrine of that size.**
+
+The final chosen material is the most ubiquitous metal in the land of Algorithmia - platinum. The priests have amassed a supply of `202400000` blocks of it.
+
+Additionally, the width of the structure does not matter, as the king's advisors (who are, of course, knights of the Order) have already allocated the edge of the Memory Stack Desert as the building site. **It is only necessary to calculate the number of blocks the king should provide to fully complete the shrine.**
+
+Your goal is, of course, to minimise the king's expenses, so you need to find a plan for the shrine that utilises all available platinum supplies while ensuring minimal cost for the king at the same time.
+
+**Example based on the following notes:**
+
+`2`
+
+Assuming only 2 high priests `(your notes)`, `5` high priest acolytes for simplicity (instead of the actual number: 10), and `160` blocks are available, the calculation of layer thickness would look as follows:
+
+```
+layer                      thickness
+1                          1
+2      (1 * 2) mod 5 + 5 = 7
+3      (7 * 2) mod 5 + 5 = 9
+4      (9 * 2) mod 5 + 5 = 8
+5      (8 * 2) mod 5 + 5 = 6
+```
+
+An example construction plan is shown below. The shrine is represented as the number of blocks per column (or column heights, in other words), as it’s too tall to be fully visualised.
+```
+layers    thickness of           width              column heights
+total     the last added layer
+1         1                      1                       [ 1]
+2         7                      3                    [7][ 8][7]
+3         9                      5                [9][16][17][16][9]
+4         8                      7            [8][17][24][25][24][17][8]
+5         6                      9        [6][14][23][30][31][30][23][14][6]
+```
+Removing bottom blocks from a 5 layered shrine looks as follows:
+
+- The shrine width is 9 blocks.
+- The first and the last columns with a height of [6] blocks stays untouched as they are part of the upper frame of the shrine.
+- For the columns with a height of [14], 2 blocks are removed: `(2 * 9) * 14 mod 5 = 2` 
+- For the columns with a height of [23], 4 blocks are removed: `(2 * 9) * 23 mod 5 = 4`
+- Columns with a height of [30] stay untouched: `(2 * 9) * 30 mod 5 = 0`
+- For the middle column with a height of [31], 3 blocks are removed: `(2 * 9) * 31 mod 5 = 3`
+
+In total, 15 bottom blocks should be left as empty, so constructing a full 5 layered shrine requires **162** blocks, which means the king needs to purchase an additional **2** blocks.
+
+Below you can find a few more examples for the same parameters as above, illustrating how many platinum blocks would be needed to build a completed shrine with a given number of layers:
+```
+layers  blocks
+2       19
+3       67
+4       115
+5       162
+6       239
+7       353
+8       491
+9       569
+10      690
+16      1885
+32      7601
+64      30655
+128     123131
+256     491005
+512     1964801
+1024    7863295
+2048    31461371
+4096    125820925
+```
+
+**How many platinum blocks at minimum should the king provide to ensure that the shrine design can be completed?**
