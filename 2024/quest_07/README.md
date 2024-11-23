@@ -61,3 +61,5 @@ Based on this, you can calculate the total essence gathered with each plan:
 The final ranking of the action plans after 10 segments is as follows: **BDCA**.
 
 **What is the ranking of the squires' action plans after 10 segments?**
+
+Solution: **EHBKGDAJF**

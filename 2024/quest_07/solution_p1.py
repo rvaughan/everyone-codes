@@ -6,7 +6,42 @@ import sys
 
 
 def calculate_solution(items):
-    result = 0
+    plans = {}
+
+    for plan in items:
+        name, steps = plan.split(':')
+        steps = steps.split(',')
+
+        plans[name] = 10
+
+        scores = []
+
+        segment = 0
+        while segment < 10:
+            if steps[segment % len(steps)] == '+':
+                plans[name] += 1
+            elif steps[segment % len(steps)] == '-':
+                plans[name] -= 1 if plans[name] > 0 else 0
+            elif steps[segment % len(steps)] == '=':
+                plans[name] += 0
+
+            scores.append(plans[name])
+
+            # print(name, segment, segment % len(steps), steps[segment % len(steps)], plans[name])
+
+            segment += 1
+
+        plans[name] = sum(scores)
+
+    sorted_plans = dict(sorted(plans.items(), key=lambda item: item[1]))
+
+    # print(sorted_plans)
+
+    result = ''
+    for key, _ in sorted_plans.items():
+        result += key
+
+    result = result[::-1]
 
     return result
 
@@ -30,9 +65,11 @@ def run_test(test_input, expected_solution):
 # Run any tests that we've defined to help validate our code prior to
 # trying to solve the puzzle.
 
-test_list = """
-"""
-result = run_test(test_list, 7)
+test_list = """A:+,-,=,=
+B:+,=,-,+
+C:=,-,+,+
+D:=,=,=,+"""
+result = run_test(test_list, "BDCA")
 
 print('')
 print('-----------------')
