@@ -41,3 +41,27 @@ The **minimum number of beetles** you need for this sparkballs list is: 2 + 2 + 
 **What is the minimum number of beetles you need to stamp to construct all sparkballs from the list?**
 
 Solution: **12740**
+
+### Part 2
+
+The next day, the tournament participants are invited to the Headquarters of the Pyromancers. It turns out that the task involves sparkballs and devising the most efficient method to utilize the beetles. It seems that the pyromancer you met the previous evening did not have time to inform his colleagues that you had already solved this problem. Well... Good for you!
+
+**The available stamps have changed** to the following: `1, 3, 5, 10, 15, 16, 20, 24, 25, 30`. Also, the list of sparkballs to be constructed is much longer now, but the core problem remains the same, so you feel very well prepared for this quest.
+
+Example based on the following notes:
+`
+33
+41
+55
+99
+`
+The optimal way to construct this sparkballs requires:
+
+- **2 beetles** for constructing the first ball with brightness  `33`  ( 30 + 3 )
+- **2 beetles** for brightness  `41`  ( 25 + 16 )
+- **2 beetles** for brightness  `55`  ( 30 + 25 )
+- **4 beetles** for brightness  `99`  ( 30 + 30 + 24 + 15 )
+
+The minimum number of beetles you need for this sparkballs list is: 2 + 2 + 2 + 4 = *10*.
+
+**What is the minimum number of beetles you need to stamp to construct all the sparkballs on the list?**
