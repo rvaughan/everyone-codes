@@ -39,3 +39,5 @@ By looking at the example above, the optimal way to accomplish this requires:
 The **minimum number of beetles** you need for this sparkballs list is: 2 + 2 + 3 + 3 = **10**.
 
 **What is the minimum number of beetles you need to stamp to construct all sparkballs from the list?**
+
+Solution: **12740**

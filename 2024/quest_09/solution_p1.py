@@ -5,9 +5,21 @@ This code holds the solution for part 1 of quest 9 of the Everone Codes tourname
 import sys
 
 
-def calculate_solution(items):
+def calculate_solution(sparkballs):
     result = 0
 
+    stamps = [10, 5, 3, 1]
+
+    for sparkball in [int(x) for x in sparkballs]:
+        beetles = 0
+
+        for stamp in stamps:
+            while sparkball >= stamp:
+                sparkball -= stamp
+                beetles += 1
+
+        result += beetles
+    
     return result
 
 
@@ -30,9 +42,11 @@ def run_test(test_input, expected_solution):
 # Run any tests that we've defined to help validate our code prior to
 # trying to solve the puzzle.
 
-test_list = """
-"""
-result = run_test(test_list, 7)
+test_list = """2
+4
+7
+16"""
+result = run_test(test_list, 10)
 
 print('')
 print('-----------------')
