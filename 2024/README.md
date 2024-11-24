@@ -25,3 +25,4 @@ Each quest has three parts parts to it. I've broken the solutions for each part 
     * [Reddit discussion page](https://www.reddit.com/r/everybodycodes/comments/1gpylzn/2024_q7_solution_spotlight/)
   * [Quest 08 - A Shrine for Nullpointer](./quest_08/README.md).
     * [Reddit discussion page](https://www.reddit.com/r/everybodycodes/comments/1gqq8ub/2024_q8_solution_spotlight/)
+  * [Quest 09 - ???](./quest_09/README.md).
