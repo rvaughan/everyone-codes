@@ -8,7 +8,7 @@ import sys
 
 @cache
 def num_beetles(brightness):
-    stamps = [30, 25, 24, 20, 16, 15, 10, 5, 3, 1]
+    stamps = [101, 100, 75, 74, 50, 49, 38, 37, 30, 25, 24, 20, 16, 15, 10, 5, 3, 1]
 
     if brightness == 0:
         return 0
@@ -30,7 +30,14 @@ def calculate_solution(sparkballs):
     result = 0
 
     for sparkball in sparkballs:
-        result += num_beetles(sparkball)
+        half_1 = sparkball // 2
+        half_2 = sparkball - half_1
+
+        combinations = []
+        for i in range(51 - sparkball % 2):
+            combinations.append(num_beetles(half_1 - i) + num_beetles(half_2 + i))
+        
+        result += min(combinations)
 
     return result
 

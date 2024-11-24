@@ -93,3 +93,5 @@ The best way to split the third brightness is by using  `2705`  beetles for brig
 The minimum number of beetles you need for this sparkballs list is 775 + 775 + 1745 + 1745 + 2705 + 2704 = **10449**.
 
 **What is the minimum number of beetles you need to stamp to fulfil the king's order?**
+
+Solution: **150590**
