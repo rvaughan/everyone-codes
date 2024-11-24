@@ -65,3 +65,5 @@ The optimal way to construct this sparkballs requires:
 The minimum number of beetles you need for this sparkballs list is: 2 + 2 + 2 + 4 = *10*.
 
 **What is the minimum number of beetles you need to stamp to construct all the sparkballs on the list?**
+
+Solution: **5018**
