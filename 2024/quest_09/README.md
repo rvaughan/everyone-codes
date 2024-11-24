@@ -67,3 +67,29 @@ The minimum number of beetles you need for this sparkballs list is: 2 + 2 + 2 + 
 **What is the minimum number of beetles you need to stamp to construct all the sparkballs on the list?**
 
 Solution: **5018**
+
+### Part 3
+
+In the evening, you encounter the same pyromancer again in the market, showcasing a light show, and you thank him for his assistance in the tournament. It turns out he has another problem to solve.
+
+The sparkballs have caught the attention of the king himself, and he has placed an order for a display of gargantuan size! The brightnesses he wants are so high that there is no way to pack so many beetles in a single sphere, but the pyromancer has an idea. He wants to simply **tie two sparkballs together** and launch them into the air.
+
+To achieve the target brightnesses from the king's list, each sparkball needs to be **split into two spheres**, but to keep the whole effect symmetric, they should have similar brightnesses. **The maximum difference in brightness between such sparkball pairs is** `100` dots. Any differences greater than this would ruin the final effect.
+
+The pyromancer also constructed some **additional stamps**, so you can place many more dots on a single beetle! The full list of available stamps is now as follows: `1, 3, 5, 10, 15, 16, 20, 24, 25, 30, 37, 38, 49, 50, 74, 75, 100, 101`.
+
+Example based on the following notes:
+`
+156488
+352486
+546212
+`
+The best way to split the first brightness into two sparkballs is by using  `775`  beetles to create a sparkball with brightness  `78275` , and another  `775`  beetles to create a sparkball with brightness  `78213` , which sums up to the target brightness:  `156488` . The brightness difference between those sparkballs is: `78275 - 78213 = 62`, which is within the acceptable range.
+
+The best way to split the second brightness is by using  1745  beetles for brightness of  `176245`  and another  `1745`  beetles for brightness of  `176241` , which sums up to the target brightness: `352486` . The brightness difference between those sparkballs is: `176245 - 176241 = 4`, which is within the acceptable range.
+
+The best way to split the third brightness is by using  `2705`  beetles for brightness of  `273156`  and  `2704`  beetles for brightness of  `273056` , which sums up to the target brightness: `546212` . The brightness difference between those sparkballs is: `273156 - 273056 = 100`, which is at the edge of the acceptable range but still counted as valid.
+
+The minimum number of beetles you need for this sparkballs list is 775 + 775 + 1745 + 1745 + 2705 + 2704 = **10449**.
+
+**What is the minimum number of beetles you need to stamp to fulfil the king's order?**
