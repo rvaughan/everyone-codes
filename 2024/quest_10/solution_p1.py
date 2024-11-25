@@ -6,7 +6,28 @@ import sys
 
 
 def calculate_solution(items):
-    result = 0
+    grid = []
+    for item in items:
+        grid.append(list(item))
+
+    col, row = 2, 2
+    for row in range(2, 6):
+        for col in range(2, 6):
+            row_data = grid[row]
+            col_data = [grid[0][col], grid[1][col], grid[2][col], grid[3][col], grid[4][col], grid[5][col], grid[6][col], grid[7][col]]
+
+            rune = '*'
+            for r in row_data:
+                for c in col_data:
+                    if r != '.' and r == c:
+                        rune = r
+
+            grid[row][col] = rune
+
+    result = ''
+    for row in range(2, 6):
+        for col in range(2, 6):
+            result += grid[row][col]
 
     return result
 

@@ -105,3 +105,5 @@ SGGMNSMN
 **GMJH**
 ```
 **What runic word will be formed upon solving your sample grid?**
+
+Solution: **FMRPJNBTDWKQCZLH**
