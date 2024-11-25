@@ -107,3 +107,24 @@ SGGMNSMN
 **What runic word will be formed upon solving your sample grid?**
 
 Solution: **FMRPJNBTDWKQCZLH**
+
+### Part 2
+
+You find the runic word, which allows you to proceed with the training on constructing a shrine.
+
+Each runic word obtained in the manner described above has its own power, which is calculated as follows:
+
+- Each symbol has a **base power**, determined alphabetically: A:1, B:2, C:3, D:4, E:5, F:6, G:7, H:8, I:9, J:10, K:11, L:12, M:13, N:14, O:15, P:16, Q:17, R:18, S:19, T:20, U:21, V:22, W:23, X:24, Y:25, Z:26.
+- Each symbol occupies an **individual position in the word, starting from 1**.
+- The **effective power** of a symbol is equal to its base power multiplied by its position in the word.
+- The power of the entire word is the **sum of the effective powers of all the symbols**.
+
+In the second round of the task, the challengers receive a stack of training samples `(your notes)`. Your goal is to identify all the runic words and **calculate the sum of their powers**.
+
+**Example:**
+
+For the example runic word from the previous part, `PTBVRCZHFLJWGMNS`, the power is calculated as follows:
+
+1 * 16 (P) + 2 * 20 (T) + 3 * 2 (B) + ... + 16 * 19 (S) = **1851**.
+
+**What is the total power of all the runic words on your training samples?**
