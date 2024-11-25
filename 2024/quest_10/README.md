@@ -128,3 +128,5 @@ For the example runic word from the previous part, `PTBVRCZHFLJWGMNS`, the power
 1 * 16 (P) + 2 * 20 (T) + 3 * 2 (B) + ... + 16 * 19 (S) = **1851**.
 
 **What is the total power of all the runic words on your training samples?**
+
+Solution: **194554**

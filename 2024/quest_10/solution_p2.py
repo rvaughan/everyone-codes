@@ -5,11 +5,7 @@ This code holds the solution for part 2 of quest 10 of the Everone Codes tournam
 import sys
 
 
-def calculate_solution(items):
-    grid = []
-    for item in items:
-        grid.append(list(item))
-
+def calc_rune_board(grid):
     col, row = 2, 2
     for row in range(2, 6):
         for col in range(2, 6):
@@ -24,10 +20,41 @@ def calculate_solution(items):
 
             grid[row][col] = rune
 
-    result = ''
+    runic_word = ''
     for row in range(2, 6):
         for col in range(2, 6):
-            result += grid[row][col]
+            runic_word += grid[row][col]
+
+    result = 0
+    for pos, rune in enumerate(runic_word):
+        result += ((pos + 1) * (ord(rune) - 64))
+
+    return result
+
+
+def calculate_solution(items):
+    all_grid = []
+    for item in items:
+        all_grid.append(list(item))
+
+    boards = []
+    row = 0
+    while row < len(all_grid):
+        col = 0
+        while col < len(all_grid[row]):
+            grid = []
+            for r in range(row, row + 8):
+                grid.append(all_grid[r][col:col + 8])
+
+            boards.append(grid)
+            
+            col += 9
+
+        row += 9
+
+    result = 0
+    for grid in boards:
+        result += calc_rune_board(grid)
 
     return result
 
@@ -59,7 +86,7 @@ FL....JW
 SG....MN
 **FTZV**
 **GMJH**"""
-result = run_test(test_list, "PTBVRCZHFLJWGMNS")
+result = run_test(test_list, 1851)
 
 print('')
 print('-----------------')
