@@ -130,3 +130,144 @@ For the example runic word from the previous part, `PTBVRCZHFLJWGMNS`, the power
 **What is the total power of all the runic words on your training samples?**
 
 Solution: **194554**
+
+### Part 3
+
+Your training is complete, so you can join the builders of the shrine!
+
+It turns out that covering the shrine with runic words serves not only a decorative purpose but they are also a functional feature. In the construction, each individual platinum block contains a 6 by 6 grid of symbols on one side, the centre part of the 8 by 8 grid you worked on. The remaining symbols are placed on adjacent blocks. Thus, the previous **8 by 8 grids have shared parts between multiple blocks**. The runic words that you obtain permanently bind together all nine blocks covered with at least one symbol from the 8 by 8 grid that produced them, ensuring the entire structure is securely held by the ancient power of the runes!
+
+The task still involves **calculating the total power of all the runic words**, but this time you are provided with a section of an actual wall of blocks from the shrine to deal with `(your notes)`. **Not every 8 by 8 block will yield a runic word**, but it is certain that securing the entire wall of blocks into a cohesive structure is possible.
+
+**An additional challenge is the presence of** `?` **signs that represent runic symbols that you must deduce during your work**. For each `?` symbol, there is always only one runic symbol that matches. Identify all possible runic words and provide their combined power.
+
+**Example based on the following notes:**
+```
+**XFZB**DCST**
+**LWQK**GQJH**
+?G....WL....DQ
+BS....H?....CN
+P?....KJ....TV
+NM....Z?....SG
+**NSHM**VKWZ**
+**PJGV**XFNL**
+WQ....?L....YS
+FX....DJ....HV
+?Y....WM....?J
+TJ....YK....LP
+**XRTK**BMSP**
+**DWZN**GCJV**
+```
+If we were to separate the given section into individual platinum blocks, it would look as follows:
+```
+* *XFZB* *DCST* *
+
+* *LWQK* *GQJH* *
+? G....W L....D Q
+B S....H ?....C N
+P ?....K J....T V
+N M....Z ?....S G
+* *NSHM* *VKWZ* *
+
+* *PJGV* *XFNL* *
+W Q....? L....Y S
+F X....D J....H V
+? Y....W M....? J
+T J....Y K....L P
+* *XRTK* *BMSP* *
+
+* *DWZN* *GCJV* *
+```
+Solving the top-left block using the previously learned rules unlocks almost all of the symbols you need:
+```
+**XFZB**
+**LWQK**
+?GLWG.WL
+BS.SHBH?
+P?PJ.KKJ
+NMN.ZMZ?
+**NSHM**
+**PJGV**
+```
+For the first dot from the top, the only symbol that does not yet have a pair in the associated row and column is `V`, so the dot must be replaced with the symbol V, as must the associated question mark.
+```
+**XFZB**
+**LWQK**
+VGLWGVWL
+BS.SHBH?
+P?PJ.KKJ
+NMN.ZMZ?
+**NSHM**
+**PJGV**
+```
+Based on the same reasoning, the second dot must be an `X`, the third must be a `Q`, and the last must be an `F`.
+```
+**XFZB**
+**LWQK**
+VGLWGVWL
+BSXSHBHX
+P?PJ.KKJ
+NMN.ZMZ?
+**NSHM**
+**PJGV**
+```
+```
+**XFZB**
+**LWQK**
+VGLWGVWL
+BSXSHBHX
+PQPJQKKJ
+NMN.ZMZ?
+**NSHM**
+**PJGV**
+```
+```
+**XFZB**
+**LWQK**
+VGLWGVWL
+BSXSHBHX
+PQPJQKKJ
+NMNFZMZF
+**NSHM**
+**PJGV**
+```
+Solving the next block to the right is now simple, as we have already found the missing symbol represented by the `?` sign. The completed words are highlighted below:
+```
+**XFZB**DCST**
+**LWQK**GQJH**
+VGLWGVWL....DQ
+BSXSHBHX....CN
+PQPJQKKJ....TV
+NMNFZMZF....SG
+**NSHM**VKWZ**
+**PJGV**XFNL**
+WQ....?L....YS
+FX....DJ....HV
+?Y....WM....?J
+TJ....YK....LP
+**XRTK**BMSP**
+**DWZN**GCJV**
+```
+```
+**XFZB**DCST**
+**LWQK**GQJH**
+VGLWGVWLDQWLDQ
+BSXSHBHXXCNHCN
+PQPJQKKJVKJTTV
+NMNFZMZFGFSZSG
+**NSHM**VKWZ**
+**PJGV**XFNL**
+WQ....?L....YS
+FX....DJ....HV
+?Y....WM....?J
+TJ....YK....LP
+**XRTK**BMSP**
+**DWZN**GCJV**
+```
+You could try solving the bottom blocks to add more brilliance to the shrine, but unfortunately, they are not solvable. The section of the wall is stable anyway, as the two blocks with runic words securely hold all the neighbouring blocks together.
+
+In summary, we have 2 runic words with powers **1900** and **1989** so the total power for this part is 1900 + 1989 = **3889**.
+
+**Find as many runic words as possible on your wall section. What is the sum of their total power?**
+
+Solution: **212032**
