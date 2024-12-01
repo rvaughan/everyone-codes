@@ -32,3 +32,4 @@ Each quest has three parts parts to it. I've broken the solutions for each part 
   * [Quest 10 - Shrine Needs to Shine](./quest_10/README.md).
     * [Watch](https://www.youtube.com/watch?v=8pcywBCMq34) Jonathan Paulson solve it.
     * [Reddit discussion page](https://www.reddit.com/r/everybodycodes/comments/1gs9br4/2024_q10_solution_spotlight/)
+  * [Quest 10 - ??](./quest_11/README.md).
