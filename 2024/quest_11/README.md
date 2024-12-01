@@ -37,3 +37,5 @@ Solution: **36**
 The second round takes place in an even more hostile environment, the Infestation Lab. This time, however, the Knights have perfected their Omnivorous Termites, and they come in a new strain with distinct conversion patterns. These new termites, starting from a single category `Z` termite, grow in a completely different way than the previous strain, but the general rules remain the same. Your goal is to predict the population count on the 10th day.
 
 **What will be the termite population count on the 10th day?**
+
+Solution: **152844**
