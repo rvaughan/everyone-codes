@@ -5,8 +5,25 @@ This code holds the solution for part 1 of quest 1 of the Everone Codes tourname
 import sys
 
 
-def calculate_solution(items):
-    result = 0
+def calculate_solution(genetics):
+    termites = {}
+
+    for genes in genetics:
+        genes = genes.split(':')
+        termites[genes[0]] = genes[1].split(',')
+
+    population = ['A']
+
+    for day in range(4):
+        new_population = []
+
+        for termite in population:
+            for gene in termites[termite]:
+                new_population.append(gene)
+
+        population = new_population
+
+    result = len(population)
 
     return result
 

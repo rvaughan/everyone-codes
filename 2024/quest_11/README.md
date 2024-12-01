@@ -29,3 +29,5 @@ After the second day, each termite converts again, so the population grows to **
 After the third day, the population counts **5** termites: `A,B,C,B,C`, and after the fourth day, **8** termites: `B,C,C,A,A,C,A,A`.
 
 **What will be the termite population count on the 4th day?**
+
+Solution: **36**
