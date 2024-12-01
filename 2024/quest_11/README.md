@@ -39,3 +39,27 @@ The second round takes place in an even more hostile environment, the Infestatio
 **What will be the termite population count on the 10th day?**
 
 Solution: **152844**
+
+### Part 3
+
+The final round presents a new, intricate challenge. A newly engineered strain of termites has been developed for an upcoming combat mission. The knights must now **investigate how the initial termite types affect the overall population after 20 days** of growth.
+
+Your task is to **determine which initial termite types will yield the largest and smallest populations on the 20th day, and then calculate the difference** between these two population sizes.
+
+**Example based on the following notes:**
+```
+A:B,C
+B:C,A,A
+C:A
+```
+Starting with a single `A` termite results in a population of **330205** on day 20.
+
+Starting with a single `B` termite results in a population of **444092** on day 20.
+
+Starting with a single `C` termite results in a population of **175277** on day 20.
+
+You can calculate the population difference by subtracting the smallest number from the largest: `444092 - 175277` = **268815**
+
+**What is the population difference on the 20th day?**
+
+Solution: **1786744062694**
