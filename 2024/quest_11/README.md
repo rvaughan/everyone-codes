@@ -31,3 +31,9 @@ After the third day, the population counts **5** termites: `A,B,C,B,C`, and afte
 **What will be the termite population count on the 4th day?**
 
 Solution: **36**
+
+### Part 2
+
+The second round takes place in an even more hostile environment, the Infestation Lab. This time, however, the Knights have perfected their Omnivorous Termites, and they come in a new strain with distinct conversion patterns. These new termites, starting from a single category `Z` termite, grow in a completely different way than the previous strain, but the general rules remain the same. Your goal is to predict the population count on the 10th day.
+
+**What will be the termite population count on the 10th day?**
